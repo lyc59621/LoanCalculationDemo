@@ -16,7 +16,7 @@
 <p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
 <p class="p1"><span class="s1">&lt;html&gt;</span></p>
 <p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;复杂计算器&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;房贷计算器&lt;/title&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* 添加样式以美化界面 */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
@@ -28,59 +28,55 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ccc;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input[type="text"] {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>label {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input[type="number"] {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 70px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 70px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #007BFF;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
 <p class="p1"><span class="s1">&lt;/head&gt;</span></p>
 <p class="p1"><span class="s1">&lt;body&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="calculator"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="display" readonly&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="clearDisplay()"&gt;C&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('7')"&gt;7&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('8')"&gt;8&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('9')"&gt;9&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('+')"&gt;+&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('4')"&gt;4&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('5')"&gt;5&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('6')"&gt;6&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('-')"&gt;-&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('1')"&gt;1&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('2')"&gt;2&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('3')"&gt;3&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('*')"&gt;*&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('0')"&gt;0&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('.')"&gt;.&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="calculateResult()"&gt;=&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="appendToDisplay('/')"&gt;/&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;房贷计算器&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label for="loanAmount"&gt;贷款金额 (元):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="loanAmount"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label for="loanTerm"&gt;贷款期限 (年):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="loanTerm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label for="interestRate"&gt;年利率 (%):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="interestRate"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="calculateLoanPayment()"&gt;计算月还款额&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="result"&gt;&lt;/div&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 计算器逻辑</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function appendToDisplay(value) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById("display").value += value;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// 房贷计算器逻辑</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateLoanPayment() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const loanAmount = parseFloat(document.getElementById("loanAmount").value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const loanTerm = parseInt(document.getElementById("loanTerm").value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const interestRate = parseFloat(document.getElementById("interestRate").value);</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function clearDisplay() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById("display").value = "";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateResult() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const expression = document.getElementById("display").value;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>try {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const result = eval(expression);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById("display").value = result;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>} catch (error) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById("display").value = "Error";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (isNaN(loanAmount) || isNaN(loanTerm) || isNaN(interestRate)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById("result").innerHTML = "请输入有效的数值。";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const monthlyInterestRate = interestRate / 100 / 12;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const numberOfPayments = loanTerm * 12;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById("result").innerHTML = `每月还款额: ￥${monthlyPayment.toFixed(2)}`;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
 <p class="p1"><span class="s1">&lt;/body&gt;</span></p>
